@@ -6,6 +6,7 @@ import paymentRoute from './routes/verifyPayment.js';
 import transactionRoute from './routes/txnId.js';
 import updateEventsRoute from './routes/updateEvents.js';
 import testDBRoute from './routes/testdb.js';
+import adminRoutes from './routes/admin/admin.js';
 
 
 dotenv.config();
@@ -13,7 +14,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.use('/api/admin', adminRoutes);
 app.use('/api/register', registerRoute);
 app.use('/api/txnid', transactionRoute);
 app.use('/api/verifyPayment', paymentRoute);
