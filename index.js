@@ -20,9 +20,10 @@ app.use('/api/verifyPayment', paymentRoute);
 app.use('/api/update-events', updateEventsRoute);
 app.use('/api/testdb', testDBRoute);
 
-app.listen(5000, () => {
-  console.log('Server running on port 5000');
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Server running on port ${process.env.PORT || 5000}`);
 });
+
 
 
 export default app;

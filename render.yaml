@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: fest-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gjdb25
+          property: postgresql://gjdb25_user:LhzPD6Rg4YZldC19ur6J7epKHtLpaRdf@dpg-cvrc16s9c44c739jigo0-a/gjdb25
+      - key: MAIL_USER
+        value: krishnaag16113india@gmail.com
+      - key: MAIL_PASS
+        value: vpsa vrkx jlhj lzwi
