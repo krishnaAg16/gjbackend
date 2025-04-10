@@ -40,7 +40,7 @@ router.get('/participant-events', async (req, res) => {
       SELECT pe.participant_id, pe.event_id, e.event_name, e.committee, t.tid
       FROM participant_events pe
       JOIN events e ON pe.event_id = e.event_id
-      JOIN transactions t ON pe.transaction_id = t.tid
+      JOIN transactions t ON pe.tid = t.tid
     `);
         res.json({ success: true, data: rows });
     } catch (err) {
