@@ -36,7 +36,7 @@ const selectUPI = (amount) => {
 export const generateQR = async ({ name, amount, note }) => {
     const selectedUPI = selectUPI(amount);
     const upi = `upi://pay?pa=${selectedUPI}&pn=${name}&am=${amount}&cu=INR&tn=${note}`;
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(upi)}&size=100x100`;
+    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(upi)}&size=200x200`;
     return {
         qrUrl,
         selectedUPI
