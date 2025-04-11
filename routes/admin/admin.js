@@ -5,7 +5,7 @@ import viewRoutes from './viewAll.js'; // Correct import path and name
 const router = express.Router();
 
 // Admin: Add Event API
-router.post('/add-event', async (req, res) => {
+router.post('/addEvent', async (req, res) => {
     const { event_name, committee, price } = req.body;
 
     if (!event_name || !committee || typeof price !== 'number' || price < 0) {

@@ -4,7 +4,7 @@ import db from '../../db/connection.js';
 const router = express.Router();
 
 
-router.get('/participants', async (req, res) => {
+router.get('/participant', async (req, res) => {
     try {
         const { rows } = await db.query(`SELECT * FROM participants`);
         res.json({ success: true, data: rows });
@@ -14,7 +14,7 @@ router.get('/participants', async (req, res) => {
     }
 });
 
-router.get('/transactions', async (req, res) => {
+router.get('/transaction', async (req, res) => {
     try {
         const { rows } = await db.query(`SELECT * FROM transactions`);
         res.json({ success: true, data: rows });
@@ -34,7 +34,7 @@ router.get('/events', async (req, res) => {
     }
 });
 
-router.get('/participant-events', async (req, res) => {
+router.get('/participant-event', async (req, res) => {
     try {
         const { rows } = await db.query(`
       SELECT pe.participant_id, pe.event_id, e.event_name, e.committee, t.tid

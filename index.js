@@ -7,6 +7,7 @@ import transactionRoute from './routes/txnId.js';
 import updateEventsRoute from './routes/updateEvents.js';
 import testDBRoute from './routes/testdb.js';
 import adminRoutes from './routes/admin/admin.js';
+import statsRouter from './routes/stats.js';
 
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use('/api/txnid', transactionRoute);
 app.use('/api/verifyPayment', paymentRoute);
 app.use('/api/update-events', updateEventsRoute);
 app.use('/api/testdb', testDBRoute);
+app.use('/api/stats', statsRouter);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log(`Server running on port ${process.env.PORT || 5000}`);
